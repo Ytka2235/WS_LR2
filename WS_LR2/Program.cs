@@ -20,28 +20,23 @@
 
     private static void Main(string[] args)
     {
-        try
+        int D = Convert.ToInt32(Console.ReadLine());
+        int T = Convert.ToInt32(Console.ReadLine());
+        if ((T >= 0 & T <= 23)&&(D >= 1 & D <= 7))
         {
-            Days D = (Days)Convert.ToInt32(Console.ReadLine());
-            int T = Convert.ToInt32(Console.ReadLine());
-            if (T >= 0 & T <= 23)
-            {
-                Console.WriteLine("Сейчас "+ D +", "+Times(T));
-            }
-            else
-            {
-                Console.WriteLine("Error");
-            }
+            Days day = (Days)D;
+            Console.WriteLine("Сейчас " + day + ", " + Times(T));
         }
-        catch 
+        else
         {
             Console.WriteLine("Error");
         }
+
     }
-        
+
     static times Times(int x)
     {
-        times times  = new times();
+        times times = new times();
         if (x >= 7 & x <= 12) times = (times)1;
         if (x >= 13 & x <= 18) times = (times)2;
         if (x >= 18 & x <= 23) times = (times)3;
